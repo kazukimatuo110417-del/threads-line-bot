@@ -1,4 +1,4 @@
-from app import ai
+import ai
 from analytics import engagement_score
 from database import (
     get_state,
