@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: threads-line-bot
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: TZ
+        value: Asia/Tokyo
+      - key: DATABASE_PATH
+        value: /opt/render/project/src/data/bot.sqlite3
